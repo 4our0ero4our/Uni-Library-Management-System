@@ -1,0 +1,163 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url("../public/images/page-bg.png");
+}
+
+@font-face {
+  font-family: IBMPlexSansBold;
+  src: url("../public/fonts/IBM\ Plex\ Sans/IBMPlexSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: IBMPlexSansLight;
+  src: url("../public/fonts/IBM\ Plex\ Sans/IBMPlexSans-Light.ttf");
+}
+
+.sign-in-page {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  /* height: 100vh; */
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.sign-in-container {
+  /* background-image: linear-gradient(from left, #12141D, #12151F); */
+  background-color: #12151f;
+  margin: 50px;
+  height: fit-content;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 20px;
+}
+
+.featrued-image-container {
+  justify-self: end;
+  flex-basis: 50%;
+}
+
+.sign-in-featured-image {
+  /* position: fixed; */
+  height: 100%;
+  width: 100%;
+}
+
+.uni-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.uni-name p,
+.page-details h1 {
+  font-family: IBMPlexSansBold;
+  font-size: 28px;
+}
+
+.page-details p {
+  color: #d6e0ff;
+  font-family: IBMPlexSansLight;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.sign-in-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sign-in-container form div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sign-in-container form div label,
+.file-upload p {
+  font-size: 16px;
+  color: #d6e0ff;
+  font-family: IBMPlexSansLight;
+}
+
+.sign-in-container form div input {
+  font-size: 16px;
+  color: #ffffff;
+  font-family: IBMPlexSansBold;
+  height: 40px;
+  background-color: #232839;
+  outline: none;
+  border: 0;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.sign-in-container form button {
+  background-color: #e7c9a5;
+  padding: 16px 32px;
+  font-size: 16px;
+  color: #14171c;
+  font-family: IBMPlexSansBold;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.login-option {
+  align-self: center;
+  font-family: IBMPlexSansLight;
+  font-size: 16px;
+}
+
+.login-option a {
+  text-decoration: none;
+  color: #e7c9a5;
+  align-self: center;
+  font-family: IBMPlexSansBold;
+  font-size: 16px;
+}
+
+.password-option {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  cursor: pointer;
+}
+
+
+@media (max-width: 850px) {
+  .sign-in-container {
+    margin: 20px;
+    padding: 30px;
+  }
+
+  .featrued-image-container {
+    display: none;
+  }
+}
+
+@media (max-width: 475px) {
+  .uni-name p,
+  .page-details h1 {
+    font-family: IBMPlexSansBold;
+    font-size: 20px;
+  }
+
+  .page-details p {
+    color: #d6e0ff;
+    font-family: IBMPlexSansLight;
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .sign-in-container {
+    padding: 20px;
+  }
+}

@@ -1,3 +1,5 @@
+/* General Stylings */
+
 * {
   padding: 0;
   margin: 0;
@@ -17,6 +19,12 @@ body {
   src: url("../public/fonts/IBM\ Plex\ Sans/IBMPlexSans-Light.ttf");
 }
 
+@font-face {
+  font-family: BebasNeue;
+  src: url("../public/fonts/Bebas\ Neue/BebasNeue-Regular.ttf");
+}
+
+/* SignIn & LogIn Page Stylings */
 .sign-in-page {
   color: #fff;
   display: flex;
@@ -131,7 +139,6 @@ body {
   cursor: pointer;
 }
 
-
 @media (max-width: 850px) {
   .sign-in-container {
     margin: 20px;
@@ -161,3 +168,267 @@ body {
     padding: 20px;
   }
 }
+
+/* Navbar Stylings */
+
+nav {
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.nav-uni-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.nav-uni-name p {
+  font-family: IBMPlexSansBold;
+  font-size: 28px;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.desktop-nav a img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.desktop-nav a {
+  text-decoration: none;
+  color: #d6e0ff;
+  font-size: 20px;
+  font-family: IBMPlexSansLight;
+  transition: all 0.5s;
+}
+
+.desktop-nav a:hover {
+  /* text-decoration: underline; */
+  color: #eed1ac;
+  font-family: IBMPlexSansLight;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.hamburger-menu {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+}
+
+.mobile-navigations {
+  display: flex;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  height: 100%;
+  align-items: center;
+  gap: 100px;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.mobile-nav-links a {
+  text-decoration: none;
+  font-size: 20px;
+  font-family: IBMPlexSansLight;
+  color: #fff;
+}
+
+.mobile-nav-links a:hover {
+  color: #eed1ac;
+}
+
+.mobile-nav-uni-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+}
+
+.mobile-nav-uni-name p {
+  font-family: IBMPlexSansBold;
+  font-size: 28px;
+}
+
+@media (max-width: 940px) {
+  nav {
+    padding: 20px 50px;
+  }
+}
+
+@media (max-width: 825px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+  /* 
+  .mobile-navigations {
+    display: flex;
+  } */
+
+  .nav-uni-name {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-uni-name p,
+  .mobile-nav-uni-name p {
+    font-size: 20px;
+  }
+
+  .nav-uni-name img,
+  .mobile-nav-uni-name img {
+    width: 30px;
+    height: 20px;
+  }
+
+  .hamburger-menu {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+  }
+
+  nav {
+    padding: 20px;
+  }
+}
+
+/* Home Hero Stylings */
+.featured-book {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 100px;
+  font-family: IBMPlexSansLight;
+  font-size: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.featured-book-details {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  line-height: 1.5;
+}
+
+.featured-book-details h1 {
+  font-size: 72px;
+  font-family: IBMPlexSansBold;
+}
+
+.featured-book-details a button {
+  background-color: #eed1ac;
+  font-size: 20px;
+  padding: 10px;
+  font-family: BebasNeue;
+  letter-spacing: 1;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.featured-book-details a button:hover {
+  color: #e7c9a5;
+  background-color: #1a1515;
+}
+
+.brown-colored {
+  color: #eed1ac;
+  font-family: IBMPlexSansBold;
+}
+
+.featured-book-image-container {
+  position: relative;
+}
+
+.featured-book-image-container img {
+  width: 300px;
+  height: 400px;
+}
+
+.featured-book-image {
+  position: relative;
+  z-index: 1;
+  padding-right: 100px;
+}
+
+.book-shadow {
+  filter: blur(4px);
+  position: absolute;
+  right: -20px;
+  transform: rotate(20deg);
+  z-index: 0;
+}
+
+@media (max-width: 940px) {
+  .featured-book {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 50px;
+    font-size: 20px;
+    align-items: center;
+  }
+
+  .book-shadow {
+    display: none;
+  }
+
+  .featured-book-image {
+    margin-top: 30px;
+    padding-right: 0px;
+  }
+}
+
+/* @media (max-width: px) {
+  .featured-book {
+    padding: 20px 50px;
+  }
+} */
+
+
+
+
+/*  */

@@ -8,8 +8,13 @@ import { useState } from 'react';
 
 const Login = () => {
 
+    // Determine to displaying Password and Student ID or not
     const [displaySecret, setDisplaySecret] = useState(true);
+    
+    // Fetch Featured Image
+    const signInFeaturedImg = BookCollectionImg;
 
+    // Toggles Users' preference in displaying password and Student ID 
     const toggleDisplaySecret = () => {
         setDisplaySecret(!displaySecret)
     };
@@ -46,7 +51,7 @@ const Login = () => {
                 <p className='login-option'>Don't have an account already? <a href="/login">Register here</a></p>
             </div>
             <div className='featrued-image-container'>
-                <img src={BookCollectionImg.src}
+                <img src={signInFeaturedImg.src}
                     className='sign-in-featured-image'
                     alt="Featured Image of Books" />
             </div>

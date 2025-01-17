@@ -12,6 +12,7 @@ const Home = () => {
     totalBooks: 100,
     availableBooks: 42,
     bookCoverImage: OriginBookCover,
+    bookDetails: 'Origin is a 2017 mystery-thriller novel by American author Dan Brown. It is the fifth installment in the Robert Langdon series, following previous bestsellers such as The Da Vinci Code and Angels & Demons.'
   };
 
   // Top 5 most borrowed books will be displayed according to the data from the backend. There will be some default 
@@ -60,9 +61,7 @@ const Home = () => {
             )
           })} &nbsp;&nbsp;</p>
           <p>Total books: <span className='brown-colored'>{featuredBook.totalBooks}</span> &nbsp;&nbsp; Available books: <span className='brown-colored'>{featuredBook.availableBooks}</span></p>
-          <p>
-            Origin is a 2017 mystery-thriller novel by American author Dan Brown. It is the fifth installment in the Robert Langdon series, following previous bestsellers such as The Da Vinci Code and Angels & Demons.
-          </p>
+          <p>{featuredBook.bookDetails}</p>
           <Link href='/'>
             <button><IoIosBook /> Borrow Book request</button>
           </Link>

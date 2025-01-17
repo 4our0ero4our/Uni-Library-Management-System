@@ -1,25 +1,51 @@
 import Navbar from "@/components/Navbar";
-import { CiStar } from "react-icons/ci";
 import Link from "next/link";
 import { IoIosBook } from "react-icons/io";
-import BookCover from "@/components/BookCover";
 import OriginBookCover from '../public/images/Origin_Book_Cover-removebg-preview.png';
 
 const Home = () => {
   // Fetched Featured Book
   const featuredBook = {
     bookName: 'Origin',
-    writer: 'Dan Brwon',
+    writer: 'Dan Brown',
     categories: ['Thriller', 'Suspense'],
     totalBooks: 100,
     availableBooks: 42,
+    bookCoverImage: OriginBookCover,
   };
 
-  // Based on what people has borrowed the most
+  // Top 5 most borrowed books will be displayed according to the data from the backend. There will be some default 
   const popularBooks = [
     {
-
-    }
+      bookName: 'Origin',
+      writer: 'Dan Brown',
+      categories: ['Thriller', 'Suspense'],
+      bookCoverImage: OriginBookCover,
+    },
+    {
+      bookName: 'Origin',
+      writer: 'Dan Brown',
+      categories: ['Thriller', 'Suspense'],
+      bookCoverImage: OriginBookCover,
+    },
+    {
+      bookName: 'Origin',
+      writer: 'Dan Brown',
+      categories: ['Thriller', 'Suspense'],
+      bookCoverImage: OriginBookCover,
+    },
+    {
+      bookName: 'Origin',
+      writer: 'Dan Brown',
+      categories: ['Thriller', 'Suspense'],
+      bookCoverImage: OriginBookCover,
+    },
+    {
+      bookName: 'Origin',
+      writer: 'Dan Brown',
+      categories: ['Thriller', 'Suspense'],
+      bookCoverImage: OriginBookCover,
+    },
   ]
 
   return (
@@ -42,8 +68,30 @@ const Home = () => {
           </Link>
         </div>
         <div className='featured-book-image-container'>
-          <img src={OriginBookCover.src} className='featured-book-image' alt="Book Cover" />
-          <img className='book-shadow' src={OriginBookCover.src} alt="Book Cover" />
+          <img src={featuredBook.bookCoverImage.src} className='featured-book-image' alt="Book Cover" />
+          <img className='book-shadow' src={featuredBook.bookCoverImage.src} alt="Book Cover" />
+        </div>
+      </div>
+      <div className='popular-books-container'>
+        <h1>Popular Books</h1>
+        <div className='popular-books'>
+          {
+            popularBooks.map((popularBook, i) => {
+              return (
+                <div key={i} className='popular-book'>
+                  <img className='popular-book-image' src={popularBook.bookCoverImage.src} alt="The cover of the book Origin" />
+                  <p className='popular-book-name'>{popularBook.bookName} by {popularBook.writer}</p>
+                  <p className='popular-book-category'>
+                    {popularBook.categories.map((category, j) => {
+                      return (
+                        <span key={j}>{category}{j < popularBook.categories.length - 1 ? ' / ' : ''}</span>
+                      )
+                    })}
+                  </p>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     </div>

@@ -77,7 +77,7 @@ const Home = () => {
           {
             popularBooks.map((popularBook, i) => {
               return (
-                <div key={i} className='popular-book'>
+                <Link href={'/bookdetails/1234'} key={i} className='popular-book'>
                   <img className='popular-book-image' src={popularBook.bookCoverImage.src} alt="The cover of the book Origin" />
                   <p className='popular-book-name'>{popularBook.bookName} by {popularBook.writer}</p>
                   <p className='popular-book-category'>
@@ -87,7 +87,7 @@ const Home = () => {
                       )
                     })}
                   </p>
-                </div>
+                </Link>
               )
             })
           }

@@ -450,6 +450,7 @@ nav {
   flex-direction: column;
   gap: 20px;
   margin-bottom: 30px;
+  text-decoration: none;
 }
 
 .popular-book-image {
@@ -579,3 +580,143 @@ nav {
     display: none;
   }
 }
+
+/* Search Page Styling */
+
+.search-page-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 50px auto;
+  width: 45%;
+}
+
+.search-page-hero p {
+  font-size: 20px;
+  font-family: IBMPlexSansBold;
+  color: #d6e0ff;
+  text-transform: uppercase;
+}
+
+.search-page-hero h1 {
+  font-size: 56px;
+  font-family: IBMPlexSansBold;
+  color: #ffffff;
+  text-align: center;
+}
+
+.search-page-hero div {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.search-btn {
+  color: #000;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-size: 30px;
+  color: #ffe1bd;
+}
+
+.search-page-hero div input {
+  width: 100%;
+  height: 70px;
+  border-radius: 10px;
+  background-color: #363f5a;
+  border: none;
+  padding-left: 60px;
+  font-size: 20px;
+  color: #ffffff;
+  outline: none;
+  font-family: IBMPlexSansLight;
+  font-weight: 600;
+}
+
+@media (max-width: 1150px) {
+  .search-page-hero {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1020px) {
+  .search-page-hero {
+    width: 70%;
+  }
+}
+
+@media (max-width: 730px) {
+  .search-page-hero h1 {
+    font-size: 45px;
+  }
+
+  .search-page-hero div input {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .search-btn {
+    top: 10px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-page-hero {
+    /* width: 100%; */
+    padding: 20px;
+    margin: 0 auto;
+  }
+
+  .search-page-hero p {
+    font-size: 16px;
+  }
+
+  .search-page-hero h1 {
+    font-size: 30px;
+  }
+
+  .search-page-hero div input {
+    margin: 0 auto;
+    width: 90%;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .search-btn {
+    top: 10px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .search-page-hero p {
+    font-size: 14px;
+  }
+
+  .search-page-hero h1 {
+    font-size: 20px;
+  }
+
+  .search-page-hero div input {
+    margin: 0 auto;
+    width: 90%;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .search-btn {
+    top: 5px;
+    font-size: 20px;
+  }
+
+  .search-page-hero div {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+

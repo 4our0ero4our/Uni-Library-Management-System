@@ -638,6 +638,8 @@ nav {
 
 .search-results {
   padding: 0px 100px;
+  margin: 0 auto;
+  max-width: 1500px;
 }
 
 .search-results-heading {
@@ -659,7 +661,8 @@ nav {
 }
 
 @media (max-width: 730px) {
-  .search-page-hero h1 {
+  .search-page-hero h1,
+  .no-search {
     font-size: 45px;
   }
 
@@ -686,7 +689,8 @@ nav {
     font-size: 16px;
   }
 
-  .search-page-hero h1 {
+  .search-page-hero h1,
+  .no-search {
     font-size: 30px;
   }
 
@@ -713,7 +717,8 @@ nav {
     font-size: 14px;
   }
 
-  .search-page-hero h1 {
+  .search-page-hero h1,
+  .no-search {
     font-size: 20px;
   }
 
@@ -754,4 +759,88 @@ nav {
   text-align: center;
   cursor: pointer;
   font-size: 20px;
+}
+
+/* No Search Stylings */
+.no-search {
+  color: #d6e0ff;
+  font-family: IBMPlexSansBold;
+  text-align: center;
+  margin-top: 100px;
+}
+
+/*  No Results Container Stylings */
+.no-results-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  margin: 100px auto;
+  width: 400px;
+}
+
+.no-results-cta img {
+  width: 300px;
+  height: 300px;
+}
+
+.no-results-cta p:nth-of-type(1) {
+  color: #fff;
+  font-family: IBMPlexSansBold;
+  font-size: 26px;
+}
+
+.no-results-cta p:nth-of-type(2) {
+  color: #d6e0ff;
+  font-family: IBMPlexSansLight;
+  font-size: 18px;
+}
+
+.no-results-cta button {
+  width: 100%;
+  background-color: #eed1ac;
+  font-size: 20px;
+  padding: 10px;
+  font-family: BebasNeue;
+  letter-spacing: 1;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 10px;
+}
+
+@media (max-width: 500px) {
+  .search-results {
+    padding: 0px 50px;
+    margin: 0 auto;
+    max-width: 1500px;
+  }
+
+  .search-results-pagination {
+    justify-content: center;
+    /* position: relative; */
+  }
+}
+
+@media (max-width: 550px) {
+  .no-results-cta {
+    align-items: center;
+    text-align: center;
+    margin: 100px auto;
+    width: 100%;
+    padding: 0;
+  }
+
+  .no-results-cta img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .no-results-cta p:nth-of-type(1) {
+    font-size: 22px;
+  }
+
+  .no-results-cta p:nth-of-type(2) {
+    font-size: 14px;
+  }
 }

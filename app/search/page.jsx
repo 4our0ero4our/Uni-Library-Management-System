@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { FaChevronLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa";
 import { booksFromDB } from '@/utils';
+import NoResultsImage from '@/public/images/No Results Image.png'
 
 const Search = () => {
     // Current search word will be in here
@@ -23,10 +24,10 @@ const Search = () => {
 
     const checkName = (nameToBeChecked) => {
         if (nameToBeChecked.length <= 20) {
-            return (nameToBeChecked)
+            return nameToBeChecked;
         } else {
-            const splittedName = nameToBeChecked.split(' ')
-            return (`${splittedName[0]}...`)
+            const splittedName = nameToBeChecked.split(' ');
+            return `${splittedName[0]}...`;
         }
     };
 
@@ -56,6 +57,11 @@ const Search = () => {
         }
     };
 
+    // Clear Search
+    const clearSearch = () => {
+        setSearchWord('');
+    }
+
     return (
         <div style={{ marginBottom: '100px' }}>
             <Navbar />
@@ -68,93 +74,108 @@ const Search = () => {
                 <div>
                     <IoIosSearch className='search-btn' />
                     <input
+                        autoFocus
                         onChange={(e) => {
-                            setSearchWord(e.target.value);
-                            searchBook(searchWord);
-                            setSearchWord(e.target.value);
-                            if (e.target.value === '') {
+                            const value = e.target.value;
+                            setSearchWord(value);
+                            if (value === '') {
                                 setSearchResults([]);
                             } else {
-                                searchBook(e.target.value);
+                                searchBook(value);
                             }
                         }}
                         type="text"
                     />
                 </div>
             </div>
+
+            {/* Search Results Area */}
             <div className='search-results'>
-                <p className='search-results-heading'>Search Results for {searchWord}</p>
-                <div className='popular-books'>
-                    {paginatedBooks.map((searchResult, i) => {
-                        return (
-                            <Link
-                                href={`/bookdetails/${searchResult.bookId}`}
-                                key={i}
-                                className='popular-book'
-                            >
-                                <img
-                                    className='popular-book-image'
-                                    src={searchResult.bookCoverImage.src}
-                                    alt="The cover of the book Origin"
-                                />
-                                <p className='popular-book-name'>
-                                    {checkName(searchResult.bookName)} <br /> by - {checkName(searchResult.writer)}
-                                </p>
-                                <p className='popular-book-category'>
-                                    {searchResult.categories.map((category, j) => {
-                                        return (
-                                            <span key={j}>
-                                                {category}
-                                                {j < searchResult.categories.length - 1 ? ' / ' : ''}
-                                            </span>
-                                        );
-                                    })}
-                                </p>
-                            </Link>
-                        );
-                    })}
-                </div>
-            </div>
-            {/* Pagination */}
-            <div className='search-results-pagination'>
-                {totalPages > 1 && (
+                {searchWord === '' ? (
+                    // No search word
+                    <h1 className='no-search'>
+                        Your <span style={{ color: '#FFE1BD' }}>Search Results</span> Will Be Shown Here
+                    </h1>
+                ) : searchResults.length === 0 ? (
+                    // No results found
+                    <div className='no-results'>
+                        <p className='search-results-heading'>
+                            Search Results for <span style={{ color: '#FFE1BD' }}>{searchWord}</span>
+                        </p>
+                        <div className='no-results-cta'>
+                            <img src={NoResultsImage.src} alt="No resutls found" />
+                            <p>No Results Found</p>
+                            <p>
+                                We couldn’t find any books matching your search. Try using different keywords or check for typos.
+                            </p>
+                            <button onClick={clearSearch}>Clear Search</button>
+                        </div>
+                    </div>
+                ) : (
+                    // Show search results
                     <>
-                        {/* Previous Button */}
-                        <button
-                            onClick={() => changePage(currentPage - 1)}
-                            disabled={currentPage === 1}
-                        >
-                            <FaChevronLeft />
-                        </button>
+                        <p className='search-results-heading'>
+                            Search Results for <span style={{ color: '#FFE1BD' }}>{searchWord}</span>
+                        </p>
+                        <div className='popular-books'>
+                            {paginatedBooks.map((searchResult, i) => {
+                                return (
+                                    <Link
+                                        href={`/bookdetails/${searchResult.bookId}`}
+                                        key={i}
+                                        className='popular-book'
+                                    >
+                                        <img
+                                            className='popular-book-image'
+                                            src={searchResult.bookCoverImage.src}
+                                            alt="Book cover"
+                                        />
+                                        <p className='popular-book-name'>
+                                            {checkName(searchResult.bookName)} <br /> by - {checkName(searchResult.writer)}
+                                        </p>
+                                        <p className='popular-book-category'>
+                                            {searchResult.categories.map((category, j) => (
+                                                <span key={j}>
+                                                    {category}
+                                                    {j < searchResult.categories.length - 1 ? ' / ' : ''}
+                                                </span>
+                                            ))}
+                                        </p>
+                                    </Link>
+                                );
+                            })}
+                        </div>
 
-                        {/* First Page */}
-                        <button
-                            className={currentPage === 1 ? 'active' : ''}
-                            onClick={() => changePage(1)}
-                        >
-                            {currentPage}
-                        </button>
-
-                        {/* Dots */}
-                        {totalPages > 1 && <span>...</span>}
-
-                        {/* Last Page */}
+                        {/* Pagination */}
                         {totalPages > 1 && (
-                            <button
-                                className={currentPage === totalPages ? 'active' : ''}
-                                onClick={() => changePage(totalPages)}
-                            >
-                                {totalPages}
-                            </button>
+                            <div className='search-results-pagination'>
+                                <button
+                                    onClick={() => changePage(currentPage - 1)}
+                                    disabled={currentPage === 1}
+                                >
+                                    <FaChevronLeft />
+                                </button>
+                                <button
+                                    className={currentPage === 1 ? 'active' : ''}
+                                    onClick={() => changePage(1)}
+                                >
+                                    1
+                                </button>
+                                {totalPages > 2 && currentPage > 2 && <span>...</span>}
+                                <button
+                                    className={currentPage === totalPages ? 'active' : ''}
+                                    onClick={() => changePage(totalPages)}
+                                >
+                                    {totalPages}
+                                </button>
+                                <button
+                                    onClick={() => changePage(currentPage + 1)}
+                                    disabled={currentPage === totalPages}
+                                >
+                                    <FaChevronRight />
+                                </button>
+                            </div>
                         )}
-
-                        {/* Next Button */}
-                        <button
-                            onClick={() => changePage(currentPage + 1)}
-                            disabled={currentPage === totalPages}
-                        >
-                            <FaChevronRight />
-                        </button>
                     </>
                 )}
             </div>
@@ -163,13 +184,3 @@ const Search = () => {
 };
 
 export default Search;
-
-
-// Search Results (Dummy Data)
-// const searchResults = Array(100).fill().map((_, i) => ({
-//     bookId: `${1234 + i}`,
-//     bookName: `Book ${i + 1}`,
-//     writer: `Author ${i + 1}`,
-//     categories: ['Academic', 'Research'],
-//     bookCoverImage: OriginBookCover,
-// }));

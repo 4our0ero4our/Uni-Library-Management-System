@@ -844,3 +844,69 @@ nav {
     font-size: 14px;
   }
 }
+
+/* Profile Page Stylings */
+.profile-container {
+  padding: 50px 100px;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border: 20px solid #333c5c33;
+  border-radius: 50%;
+}
+
+.info-tag {
+  background-color: #464f6f;
+  width: 130px;
+  height: 200px;
+  position: absolute;
+  top: -4%;
+  border-radius: 0 0 60px 60px;
+  left: 45%;
+}
+
+.info-tag div {
+  background-color: #232839;
+  width: 100px;
+  height: 20px;
+  position: absolute;
+  bottom: 50px;
+  border-radius: 50px 50px 50px 50px;
+  left: 15px;
+}
+
+.student-info {
+  background-color: #232839;
+  position: relative;
+  border-radius: 20px;
+}
+
+.main-info-container {
+  padding: 150px 50px 50px 50px;
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-details-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.verification-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+}
+
+.verification-status p {
+  color: #d6e0ff;
+  font-family: IBMPlexSansLight;
+}

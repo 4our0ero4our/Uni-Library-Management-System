@@ -848,6 +848,10 @@ nav {
 /* Profile Page Stylings */
 .profile-container {
   padding: 50px 100px;
+  display: flex;
+  gap: 40px;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 .profile-img {
@@ -859,8 +863,8 @@ nav {
 
 .info-tag {
   background-color: #464f6f;
-  width: 130px;
-  height: 200px;
+  width: 100px;
+  height: 180px;
   position: absolute;
   top: -4%;
   border-radius: 0 0 60px 60px;
@@ -869,7 +873,7 @@ nav {
 
 .info-tag div {
   background-color: #232839;
-  width: 100px;
+  width: 70px;
   height: 20px;
   position: absolute;
   bottom: 50px;
@@ -881,16 +885,21 @@ nav {
   background-color: #232839;
   position: relative;
   border-radius: 20px;
+  max-height: fit-content;
 }
 
 .main-info-container {
-  padding: 150px 50px 50px 50px;
+  padding: 200px 50px 50px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
 }
 
 .profile-details {
   display: flex;
   align-items: center;
   gap: 20px;
+  width: 600px;
 }
 
 .profile-details-info {
@@ -909,4 +918,208 @@ nav {
 .verification-status p {
   color: #d6e0ff;
   font-family: IBMPlexSansLight;
+}
+
+.student-profile-name {
+  font-size: 28px;
+  font-weight: 600;
+  font-family: IBMPlexSansBold;
+  color: #fff;
+}
+
+.student-profile-mail {
+  font-size: 18px;
+  font-family: IBMPlexSansLight;
+  font-weight: 400;
+  color: #d6e0ff;
+}
+
+.uni-info,
+.student-id {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.uni-info p,
+.student-id p {
+  font-family: IBMPlexSansLight;
+  font-size: 22px;
+  font-weight: 400;
+  color: #d6e0ff;
+}
+
+.uni-info h1,
+.student-id h1 {
+  font-family: IBMPlexSansBold;
+  font-size: 30px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.student-id-card {
+  border-radius: 20px;
+}
+
+.borrowed-books {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.borrowed-books-heading {
+  font-family: IBMPlexSansBold;
+  color: #d6e0ff;
+}
+
+.borrowed-book-image {
+  background-color: #000;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+}
+
+.borrowed-book-image img {
+  width: 144px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.borrowed-books-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.borrowed-book-container {
+  background-color: #12141d;
+  width: 200px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.borrowed-book-container h2 {
+  font-size: 26px;
+  font-family: IBMPlexSansBold;
+  color: #fff;
+}
+
+.borrow-date,
+.days-left {
+  display: flex;
+  color: #d6e0ff;
+  gap: 10px;
+  align-items: center;
+}
+
+.borrow-date p,
+.days-left p {
+  font-family: IBMPlexSansLight;
+  color: #d6e0ff;
+}
+
+.date-et-days {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.receipt-btn {
+  position: absolute;
+  right: 5px;
+  bottom: 1px;
+  color: #ffffff;
+  background-color: #8b38484d;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+@media (max-width: 1150px) {
+  .profile-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 940px) {
+  .profile-container {
+    padding: 60px 50px;
+  }
+
+  .info-tag {
+    width: 100px;
+    height: 180px;
+    top: -4%;
+    left: 40%;
+  }
+
+  .main-info-container {
+    padding: 200px 20px 50px 20px;
+  }
+}
+
+@media (max-width: 670px) {
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+  }
+
+  .profile-details-info {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .uni-info,
+  .student-id {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .profile-container {
+    padding: 20px;
+  }
+
+  .verification-status p {
+    font-size: 15px;
+  }
+
+  .student-profile-name {
+    font-size: 25px;
+  }
+
+  .student-profile-mail {
+    font-size: 15px;
+  }
+
+  .uni-info p,
+  .student-id p {
+    font-size: 18px;
+  }
+
+  .uni-info h1,
+  .student-id h1 {
+    font-size: 25px;
+  }
+
+  .info-tag {
+    width: 100px;
+    height: 180px;
+    top: -2%;
+    left: 37%;
+  }
+
+  .borrowed-book-container {
+    width: 100%;
+  }
+  .borrowed-books-heading,
+  .borrowed-book-container h2 {
+    font-size: 20px;
+  }
 }

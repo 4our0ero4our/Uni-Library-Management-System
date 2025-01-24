@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { FaChevronLeft } from "react-icons/fa6";
 import { FaChevronRight } from "react-icons/fa";
 import { booksFromDB } from '@/utils';
-import NoResultsImage from '@/public/images/No Results Image.png'
+import NoResultsImage from '@/public/images/No Results Image.png';
 
 const Search = () => {
     // Current search word will be in here

@@ -2,7 +2,6 @@ import Navbar from '@/components/Navbar';
 import profileDp from '@/public/images/Profile DP.jpg';
 import { MdVerified } from "react-icons/md";
 import StudentIdPics from '@/public/images/StudentId.png';
-import BookImage from '@/public/images/Origin_Book_Cover-removebg-preview.png';
 import { CiCalendar } from "react-icons/ci";
 import { IoReceiptOutline } from "react-icons/io5";
 import { IoBookOutline } from "react-icons/io5";
